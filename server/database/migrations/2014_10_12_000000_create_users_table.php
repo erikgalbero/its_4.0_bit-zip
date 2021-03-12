@@ -20,7 +20,6 @@ class CreateUsersTable extends Migration
             $table->string('phone');
             $table->string('email');
             $table->boolean('privacy_agreement');
-            $table->rememberToken();
             $table->timestamps();
         });
     }
