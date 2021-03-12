@@ -19,7 +19,7 @@ class CreateMessagesTable extends Migration
             $table->string('answer');
             $table->integer('order');
             $table->timestamps();
-        });
+        }); 
     }
 
     /**
