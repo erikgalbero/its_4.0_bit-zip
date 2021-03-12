@@ -3,3 +3,6 @@ Questa è la repository ufficiale del progetto 4.0 commissionato dal MIUR, l'obi
 
 # Mockup
 [lo puoi trovare qui](https://www.figma.com/file/WMp8Tn5aF7ZepdegvacTNx/ITS-4.0?node-id=0%3A1)
+
+# Design
+[diagramma ER](https://drive.google.com/file/d/1cOy4wkwm2XlwaloR2gUTYDHLh-cY5MkI/view?usp=sharing)
