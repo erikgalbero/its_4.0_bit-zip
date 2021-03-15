@@ -15,16 +15,6 @@ class RegistrationController extends Controller
     public function create(Request $request) {
         $userData = json_decode($request->getContent());
 
-        $request->validate([
-            "name" => "required",
-            "surname" => "required",
-            "phone" => "required",
-            "email" => "required|unique:users",
-            "privacy_agreement" => 1,
-            "reason_id" => "required",
-            "role_id" => "required",
-        ]);
-
         $user = new User();
 
         $user->name = $userData->name;
