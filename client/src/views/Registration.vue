@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    homepage
+    Registration
   </div>
 </template>
 <style>
@@ -11,7 +11,7 @@
 
 
 export default {
-  name: "Homepage",
+  name: "Registration",
   components: {
   },
 
