@@ -37,22 +37,12 @@ const router = new VueRouter({
 // Auth based guard
 router.beforeEach((to, from, next) => {
 
-  if (to.matched.some(record => record.meta.requiresAuth)) {
 
-    // if route requires auth
-    if (localStorage.getItem('user')) {
-      
-      // if user is logged in
-      console.log('auth: OK, vai pure')
-      next()
+  if (!to) {
 
-    } else {
-      // if user is not logged in
-      console.log('auth: NO, rilogga')
+    router.push('/login');
+    next(false);
 
-      router.push('/login');
-      next(false);
-    }
   } else {
     next();
   }
