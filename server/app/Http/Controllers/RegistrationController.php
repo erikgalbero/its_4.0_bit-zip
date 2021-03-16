@@ -6,7 +6,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
-
 use App\Models\User;
 
 
@@ -15,18 +14,12 @@ class RegistrationController extends Controller
     public function create(Request $request) {
         $userData = json_decode($request->getContent());
 
-        $request->validate([
-            "name" => "required",
-            "surname" => "required",
-            "phone" => "required",
-            "email" => "required|unique:users",
-            "privacy_agreement" => 1,
-            "reason_id" => "required",
-            "role_id" => "required",
-        ]);
-
         $user = new User();
 
+        $id = \Ramsey\Uuid\Uuid::uuid4()->toString();
+        
+        
+        $user->id = $id;  
         $user->name = $userData->name;
         $user->surname = $userData->surname;
         $user->phone = $userData->phone;
@@ -43,10 +36,7 @@ class RegistrationController extends Controller
                 ], 200);
 
     }
-   
-    public function getUser($id) {
-        return User::find($id);
-    }
+
 
     
 }

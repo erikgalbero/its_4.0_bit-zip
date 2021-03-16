@@ -19,3 +19,4 @@ use App\Http\Controllers\RegistrationController;
 Route::get("/reasons", [ReasonController::class, "getReason"]);
 Route::post("/registration", [RegistrationController::class, "create"]);
 
+
