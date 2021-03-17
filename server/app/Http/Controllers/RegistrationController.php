@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 use App\Models\User;
-
+use Ramsey\Uuid\Nonstandard\Uuid as NonstandardUuid;
 
 class RegistrationController extends Controller
 {
@@ -17,6 +17,7 @@ class RegistrationController extends Controller
 
         $user = new User();
 
+        $user->id = NonstandardUuid::uuid4();
         $user->name = $userData->name;
         $user->surname = $userData->surname;
         $user->phone = $userData->phone;
@@ -25,7 +26,7 @@ class RegistrationController extends Controller
         $user->reason_id = $userData->reason_id;
         $user->role_id = $userData->role_id;
         
-        $user->save();
+        return $user->save();
 
         return response()
                 ->json([
